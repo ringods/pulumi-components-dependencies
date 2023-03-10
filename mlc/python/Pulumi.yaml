@@ -1,0 +1,6 @@
+name: component-deps-multi-lang
+description: Dependencies on multi-language Component Resources
+runtime:
+  name: python
+  options:
+    virtualenv: .venv

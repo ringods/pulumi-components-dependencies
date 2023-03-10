@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 return await Deployment.RunAsync(() =>
 {
-   var compDb = new SingleLanguage.ComponentDatabase("compdb", new ComponentResourceOptions {});
+   var compDb = new MultiLanguage.ComponentDatabase("compdb", new ComponentResourceOptions {});
 
-   var compDb2 = new SingleLanguage.ComponentDatabase("compdb2", new ComponentResourceOptions { DependsOn = { compDb }});
+   var compDb2 = new MultiLanguage.ComponentDatabase("compdb2", new ComponentResourceOptions { DependsOn = { compDb }});
 
     // Create an AWS resource (S3 Bucket)
     var bucket = new Bucket("my-bucket", null, new CustomResourceOptions { DependsOn = { compDb } });
@@ -16,7 +16,7 @@ return await Deployment.RunAsync(() =>
     return new Dictionary<string, object?> { ["bucketName"] = bucket.Id };
 });
 
-namespace SingleLanguage
+namespace MultiLanguage
 {
     class ComponentDatabase : Pulumi.ComponentResource
     {
