@@ -16,7 +16,7 @@ func NewComponentDatabase(ctx *pulumi.Context, name string, opts ...pulumi.Resou
 	if err != nil {
 		return nil, err
 	}
-	_, err = rds.NewInstance(ctx, "default", &rds.InstanceArgs{
+	_, err = rds.NewInstance(ctx, name, &rds.InstanceArgs{
 		AllocatedStorage:   pulumi.Int(10),
 		DbName:             pulumi.String("mydb"),
 		Engine:             pulumi.String("mysql"),
@@ -39,6 +39,11 @@ func NewComponentDatabase(ctx *pulumi.Context, name string, opts ...pulumi.Resou
 func main() {
 	pulumi.Run(func(ctx *pulumi.Context) error {
 		compDb, err := NewComponentDatabase(ctx, "compdb")
+		if err != nil {
+			return err
+		}
+
+		_, err = NewComponentDatabase(ctx, "compdb2", nil, pulumi.DependsOn([]pulumi.Resource{compDb}))
 		if err != nil {
 			return err
 		}

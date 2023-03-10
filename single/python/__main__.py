@@ -23,6 +23,8 @@ class ComponentDatabase(pulumi.ComponentResource):
 
 compDb = ComponentDatabase("compdb")
 
+compDb2 = ComponentDatabase("compdb2",opts=pulumi.ResourceOptions(depends_on=[compDb]))
+
 # Create an AWS resource (S3 Bucket)
 bucket = s3.Bucket('my-bucket',opts=pulumi.ResourceOptions(depends_on=[compDb]))
 

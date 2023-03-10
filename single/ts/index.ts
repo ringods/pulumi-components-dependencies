@@ -21,12 +21,18 @@ class ComponentDatabase extends pulumi.ComponentResource {
                 parent: this
             }
         )
-        
+
         this.registerOutputs();
     }
 }
 
 const compdb = new ComponentDatabase("compdb");
+
+const compdb2 = new ComponentDatabase("compdb2",
+    {
+        dependsOn: compdb
+    }
+);
 
 // Create an AWS resource (S3 Bucket)
 const bucket = new aws.s3.Bucket("my-bucket",
