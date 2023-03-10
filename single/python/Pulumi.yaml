@@ -1,0 +1,6 @@
+name: component-deps-single-lang
+runtime:
+  name: python
+  options:
+    virtualenv: .venv
+description: Dependencies on single-language Component Resources

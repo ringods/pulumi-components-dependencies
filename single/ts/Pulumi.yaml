@@ -1,0 +1,3 @@
+name: component-deps-single-lang
+description: Dependencies on single-language Component Resources
+runtime: nodejs

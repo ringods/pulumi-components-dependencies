@@ -1,0 +1,3 @@
+name: component-deps-single-lang
+runtime: go
+description: Dependencies on single-language Component Resources
