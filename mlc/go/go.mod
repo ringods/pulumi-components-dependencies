@@ -1,6 +1,6 @@
 module component-deps-multi-lang
 
-go 1.18
+go 1.23.0
 
 require (
 	github.com/pulumi/pulumi-aws-quickstart-vpc/sdk v0.0.2
@@ -15,7 +15,7 @@ require (
 	github.com/aead/chacha20 v0.0.0-20180709150244-8b13a72661da // indirect
 	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/cheggaaa/pb v1.0.29 // indirect
-	github.com/cloudflare/circl v1.3.7 // indirect
+	github.com/cloudflare/circl v1.6.1 // indirect
 	github.com/cyphar/filepath-securejoin v0.2.5 // indirect
 	github.com/djherbis/times v1.5.0 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
